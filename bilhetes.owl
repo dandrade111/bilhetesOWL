@@ -1,4 +1,14 @@
 <?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/danie/ontologies/2016/3/untitled-ontology-12"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -6,91 +16,224 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/danie/ontologies/2016/3/untitled-ontology-12">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="#Cinema_Normal"/>
+        <Class IRI="#Andebol"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Desporto"/>
+        <Class IRI="#Arte_Exposicao"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Concerto"/>
+        <Class IRI="#Atletismo"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Normal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cinema"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Familiar"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Bilhete"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sala"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Familia"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cadeira"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Musica_Festival"/>
+        <Class IRI="#Automovel"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Bancada"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Musica"/>
+        <Class IRI="#Basquetebol"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Morada"/>
+        <Class IRI="#Bilhete"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cinema_IMAX"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Cinema_3D"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Fila"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Teatro"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PasseGeral"/>
+        <Class IRI="#BilheteCategoria"/>
     </Declaration>
     <Declaration>
         <Class IRI="#BilheteLugar"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Cadeira"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Calçado_Roupa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cerimonias"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema_3D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema_4D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema_IMAX"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema_Normal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Circo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CityTour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Classica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concerto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Contemporanea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Corrida"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dança"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Desporto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diversos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drama"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exposiçao_Artistica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Familia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Familiar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Feira"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fila"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Futebol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hoquei"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Infantil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Livro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Magia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Morada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Museu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Musica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Musica_Festival"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Normal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Opera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parque_Diversoes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PasseGeral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patinagem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Piquenique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recital"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Revista"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sala"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Teatro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tenis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Turismo"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Vip"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BilheteCategoria"/>
+        <Class IRI="#Visitas_Guiadas"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Arte_Exposicao"/>
+        <Class IRI="#Voleibol"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#WelcomeCard"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Workshop"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Andebol"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Arte_Exposicao"/>
         <Class IRI="#BilheteCategoria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Atletismo"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Automovel"/>
+        <Class IRI="#Feira"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Bancada"/>
         <Class IRI="#BilheteLugar"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Basquetebol"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Cadeira"/>
         <Class IRI="#BilheteLugar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Calçado_Roupa"/>
+        <Class IRI="#Feira"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cerimonias"/>
+        <Class IRI="#Diversos"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cinema"/>
@@ -98,6 +241,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cinema_3D"/>
+        <Class IRI="#Cinema"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cinema_4D"/>
         <Class IRI="#Cinema"/>
     </SubClassOf>
     <SubClassOf>
@@ -109,12 +256,52 @@
         <Class IRI="#Cinema"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Circo"/>
+        <Class IRI="#Arte_Exposicao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CityTour"/>
+        <Class IRI="#Turismo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Classica"/>
+        <Class IRI="#Dança"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Comedia"/>
+        <Class IRI="#Teatro"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Concerto"/>
         <Class IRI="#Musica"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Contemporanea"/>
+        <Class IRI="#Dança"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Corrida"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Dança"/>
+        <Class IRI="#Arte_Exposicao"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Desporto"/>
         <Class IRI="#BilheteCategoria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diversos"/>
+        <Class IRI="#BilheteCategoria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Drama"/>
+        <Class IRI="#Teatro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Exposiçao_Artistica"/>
+        <Class IRI="#Arte_Exposicao"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Familia"/>
@@ -125,12 +312,40 @@
         <Class IRI="#Bilhete"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Feira"/>
+        <Class IRI="#Arte_Exposicao"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Fila"/>
         <Class IRI="#BilheteLugar"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Futebol"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hoquei"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Infantil"/>
+        <Class IRI="#Bilhete"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Livro"/>
+        <Class IRI="#Feira"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Magia"/>
+        <Class IRI="#Arte_Exposicao"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Morada"/>
         <Class IRI="#BilheteLugar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Museu"/>
+        <Class IRI="#Arte_Exposicao"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Musica"/>
@@ -145,8 +360,32 @@
         <Class IRI="#Bilhete"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Opera"/>
+        <Class IRI="#Teatro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parque_Diversoes"/>
+        <Class IRI="#Familia"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PasseGeral"/>
         <Class IRI="#Bilhete"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patinagem"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Piquenique"/>
+        <Class IRI="#Familia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Recital"/>
+        <Class IRI="#Teatro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Revista"/>
+        <Class IRI="#Teatro"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sala"/>
@@ -154,15 +393,44 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Teatro"/>
+        <Class IRI="#Arte_Exposicao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tenis"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Turismo"/>
         <Class IRI="#BilheteCategoria"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vip"/>
         <Class IRI="#Bilhete"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visitas_Guiadas"/>
+        <Class IRI="#Turismo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Voleibol"/>
+        <Class IRI="#Desporto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WelcomeCard"/>
+        <Class IRI="#Turismo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Workshop"/>
+        <Class IRI="#Arte_Exposicao"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Diversos</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Exemplo: E3, Gamescom, Comic Con</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
