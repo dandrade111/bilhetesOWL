@@ -1,14 +1,4 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE Ontology [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.semanticweb.org/danie/ontologies/2016/3/untitled-ontology-12"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -23,31 +13,127 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="#Art"/>
+        <Class IRI="#Magic"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Basketball"/>
+        <DataProperty IRI="#familiarDiscount"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Bundle"/>
+        <Class IRI="#TicketLocation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Chair"/>
+        <Class IRI="#Concert"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Children"/>
+        <Class IRI="#PauloStream"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cinema"/>
+        <Class IRI="#Museum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#price"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Familiar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Room"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTicketDiscount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Dance"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Cinema_3D"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cinema_4D"/>
+        <Class IRI="#Music"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRoom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TicketCategory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTicketCategoryOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Place"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#endTime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drama"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Cinema_IMAX"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PauloEShow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tennis"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Soccer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Children"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bundle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Theater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Overall_Pass"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ticket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TicketDiscount"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Row"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cinema_4D"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tourism"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Family"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#bi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hockey"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Cinema_Normal"/>
@@ -56,139 +142,46 @@
         <Class IRI="#Comedy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Concert"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Dance"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Drama"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Familiar"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Family"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Festival"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Hockey"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Magic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Museum"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Music"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Normal"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Overall_Pass"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PauloEShow"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PauloStream"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Place"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Room"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Row"/>
+        <ObjectProperty IRI="#hasTicketLocation"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Section"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Soccer"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Sport"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tennis"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Theater"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Ticket"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TicketCategory"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TicketDiscount"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TicketLocation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Tourism"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasPlace"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRoom"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasRow"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasSection"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTicketCategory"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTicketDiscount"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTicketLocation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isTicketCategoryOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#isTicketLocationOf"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#duration"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#endTime"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#familiarDiscount"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#placeName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#price"/>
+        <Class IRI="#Chair"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#startTime"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#bi"/>
+        <Class IRI="#Normal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#duration"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#bil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Basketball"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTicketDiscountOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Art"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Festival"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#placeName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTicketCategory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTicketLocationOf"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#TicketCategory"/>
@@ -354,6 +347,14 @@
         <Class IRI="#Art"/>
         <Class IRI="#Family"/>
         <Class IRI="#Music"/>
+        <Class IRI="#PauloEShow"/>
+        <Class IRI="#Sport"/>
+        <Class IRI="#Tourism"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Art"/>
+        <Class IRI="#Family"/>
+        <Class IRI="#Music"/>
         <Class IRI="#Sport"/>
         <Class IRI="#Tourism"/>
     </DisjointClasses>
@@ -407,33 +408,73 @@
         <Class IRI="#TicketLocation"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasChair"/>
+        <ObjectProperty IRI="#hasRoom"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasChair"/>
+        <ObjectProperty IRI="#hasRow"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasPlace"/>
         <ObjectProperty IRI="#hasTicketLocation"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRoom"/>
-        <ObjectProperty IRI="#hasTicketLocation"/>
+        <ObjectProperty IRI="#hasPlace"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRow"/>
-        <ObjectProperty IRI="#hasTicketLocation"/>
+        <ObjectProperty IRI="#hasSection"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasSection"/>
-        <ObjectProperty IRI="#hasTicketLocation"/>
+        <ObjectProperty IRI="#hasPlace"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
         <ObjectProperty IRI="#hasTicketDiscount"/>
+        <ObjectProperty IRI="#isTicketDiscountOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasTicketLocation"/>
         <ObjectProperty IRI="#isTicketLocationOf"/>
     </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasChair"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRoom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRow"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasSection"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasChair"/>
+        <Class IRI="#Chair"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlace"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRoom"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRow"/>
+        <Class IRI="#Row"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSection"/>
+        <Class IRI="#Section"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <Class IRI="#Ticket"/>
@@ -459,6 +500,26 @@
         <Class IRI="#TicketLocation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasChair"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlace"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRoom"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRow"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSection"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <Class IRI="#TicketCategory"/>
     </ObjectPropertyRange>
@@ -482,6 +543,10 @@
         <ObjectProperty IRI="#isTicketLocationOf"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#hasRoom"/>
+        <ObjectProperty IRI="#hasSection"/>
+    </DisjointObjectProperties>
     <DataPropertyDomain>
         <DataProperty IRI="#duration"/>
         <Class IRI="#Ticket"/>
@@ -534,5 +599,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
 
