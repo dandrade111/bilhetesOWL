@@ -91,6 +91,9 @@
         <ObjectProperty IRI="#hasRow"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#isAvailable"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Soccer"/>
     </Declaration>
     <Declaration>
@@ -305,16 +308,50 @@
         <Class IRI="#TicketLocation"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Place"/>
+        <ObjectUnionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasRoom"/>
+                <Class IRI="#Room"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasSection"/>
+                <Class IRI="#Section"/>
+            </ObjectExactCardinality>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Room"/>
         <Class IRI="#TicketLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Room"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasRow"/>
+            <Class IRI="#Row"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Row"/>
         <Class IRI="#TicketLocation"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Row"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasChair"/>
+            <Class IRI="#Chair"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Section"/>
         <Class IRI="#TicketLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Section"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasRow"/>
+            <Class IRI="#Row"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Soccer"/>
@@ -409,10 +446,6 @@
     </DisjointClasses>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasChair"/>
-        <ObjectProperty IRI="#hasRoom"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasChair"/>
         <ObjectProperty IRI="#hasRow"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -454,6 +487,9 @@
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSection"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isTicketDiscountOf"/>
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasChair"/>
@@ -560,6 +596,10 @@
         <Class IRI="#Familiar"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#isAvailable"/>
+        <Class IRI="#Ticket"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#placeName"/>
         <Class IRI="#Place"/>
     </DataPropertyDomain>
@@ -582,6 +622,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#familiarDiscount"/>
         <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isAvailable"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#placeName"/>
