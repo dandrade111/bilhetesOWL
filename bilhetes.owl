@@ -172,6 +172,9 @@
         <NamedIndividual IRI="#bil"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Cabin"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Basketball"/>
     </Declaration>
     <Declaration>
@@ -185,6 +188,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#placeName"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vip"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketCategory"/>
@@ -343,6 +349,17 @@
         <Class IRI="#Tourism"/>
         <Class IRI="#TicketCategory"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vip"/>
+        <Class IRI="#Ticket"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vip"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasSection"/>
+            <NamedIndividual IRI="#Cabin"/>
+        </ObjectHasValue>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Art"/>
         <Class IRI="#Family"/>
@@ -371,6 +388,7 @@
         <Class IRI="#Children"/>
         <Class IRI="#Normal"/>
         <Class IRI="#Overall_Pass"/>
+        <Class IRI="#Vip"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Cinema"/>
@@ -399,6 +417,10 @@
         <Class IRI="#TicketDiscount"/>
         <Class IRI="#TicketLocation"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Section"/>
+        <NamedIndividual IRI="#Cabin"/>
+    </ClassAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#IsChairOf"/>
         <ObjectProperty IRI="#hasChair"/>
