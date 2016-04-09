@@ -413,6 +413,18 @@
         <ObjectProperty IRI="#hasSection"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#IsChairOf"/>
+        <ObjectProperty IRI="#hasChair"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#IsRoomOf"/>
+        <ObjectProperty IRI="#hasRoom"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#IsRowOf"/>
+        <ObjectProperty IRI="#hasRow"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
     </InverseObjectProperties>
@@ -425,7 +437,25 @@
         <ObjectProperty IRI="#isTicketLocationOf"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsChairOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsRoomOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsRowOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsSectionOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasChair"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasRoom"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasRow"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasSection"/>
@@ -451,19 +481,22 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasChair"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#Row"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRoom"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#Place"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRow"/>
-        <Class IRI="#Ticket"/>
+        <ObjectUnionOf>
+            <Class IRI="#Room"/>
+            <Class IRI="#Section"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasSection"/>
-        <Class IRI="#Ticket"/>
+        <Class IRI="#Place"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTicketCategory"/>
@@ -548,6 +581,18 @@
         <ObjectProperty IRI="#isTicketLocationOf"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#IsRoomOf"/>
+        <ObjectProperty IRI="#IsSectionOf"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#IsRoomOf"/>
+        <ObjectProperty IRI="#hasSection"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#IsSectionOf"/>
+        <ObjectProperty IRI="#hasRoom"/>
+    </DisjointObjectProperties>
     <DisjointObjectProperties>
         <ObjectProperty IRI="#hasRoom"/>
         <ObjectProperty IRI="#hasSection"/>
