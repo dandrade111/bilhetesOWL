@@ -25,9 +25,6 @@
         <Class IRI="#Concert"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PauloStream"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#price"/>
     </Declaration>
     <Declaration>
@@ -35,6 +32,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Familiar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMultipleDays"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketDiscount"/>
@@ -193,6 +193,22 @@
         <ObjectProperty IRI="#isTicketLocationOf"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Overall_Pass"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Ticket"/>
+            <ObjectUnionOf>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasMultipleDays"/>
+                    <Class IRI="#Festival"/>
+                </ObjectExactCardinality>
+                <ObjectExactCardinality cardinality="1">
+                    <ObjectProperty IRI="#hasMultipleDays"/>
+                    <Class IRI="#Sport"/>
+                </ObjectExactCardinality>
+            </ObjectUnionOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#TicketDiscount"/>
         <ObjectUnionOf>
             <Class IRI="#Bundle"/>
@@ -292,10 +308,6 @@
         <Class IRI="#Ticket"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PauloStream"/>
-        <Class IRI="#Sport"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Place"/>
         <Class IRI="#TicketLocation"/>
     </SubClassOf>
@@ -326,27 +338,6 @@
     <SubClassOf>
         <Class IRI="#Theater"/>
         <Class IRI="#Art"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Ticket"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasTicketCategory"/>
-            <Class IRI="#TicketCategory"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Ticket"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasTicketLocation"/>
-            <Class IRI="#TicketLocation"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Ticket"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="#hasTicketDiscount"/>
-            <Class IRI="#TicketDiscount"/>
-        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Tourism"/>
@@ -408,10 +399,6 @@
         <Class IRI="#TicketDiscount"/>
         <Class IRI="#TicketLocation"/>
     </DisjointClasses>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasTicketCategory"/>
-        <ObjectProperty IRI="#hasSection"/>
-    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#IsChairOf"/>
         <ObjectProperty IRI="#hasChair"/>
@@ -423,6 +410,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#IsRowOf"/>
         <ObjectProperty IRI="#hasRow"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#IsSectionOf"/>
+        <ObjectProperty IRI="#hasSection"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasTicketCategory"/>
@@ -482,6 +473,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasChair"/>
         <Class IRI="#Row"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMultipleDays"/>
+        <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRoom"/>
@@ -544,6 +539,13 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasChair"/>
         <Class IRI="#Chair"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMultipleDays"/>
+        <ObjectUnionOf>
+            <Class IRI="#Festival"/>
+            <Class IRI="#Sport"/>
+        </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRoom"/>
