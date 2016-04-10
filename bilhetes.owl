@@ -16,28 +16,34 @@
         <Class IRI="#Magic"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#familiarDiscount"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TicketLocation"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#familiarDiscount"/>
+        <ObjectProperty IRI="#hasTicketExtra"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Concert"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Vagos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#1"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Museum"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#price"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Familiar"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasMultipleDays"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasTicketDiscount"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Room"/>
@@ -70,10 +76,19 @@
         <ObjectProperty IRI="#IsRowOf"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#vagos_festival"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlace"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Place"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTicketSection"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#endTime"/>
@@ -85,13 +100,19 @@
         <Class IRI="#Cinema_IMAX"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasRow"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Tennis"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasRow"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#isAvailable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TicketExtra"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTicketPlace"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Soccer"/>
@@ -118,13 +139,16 @@
         <ObjectProperty IRI="#hasChair"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Vagos1"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Overall_Pass"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TicketDiscount"/>
+        <Class IRI="#Ticket"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Ticket"/>
+        <NamedIndividual IRI="#PalcoPimba"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Row"/>
@@ -139,28 +163,31 @@
         <Class IRI="#Family"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#bi"/>
+        <ObjectProperty IRI="#isPlaceOf"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Hockey"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cinema_Normal"/>
+        <ObjectProperty IRI="#isTicketExtraOf"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Comedy"/>
+        <Class IRI="#Cinema_Normal"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketLocation"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Comedy"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Section"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Chair"/>
+        <DataProperty IRI="#startTime"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#startTime"/>
+        <Class IRI="#Chair"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Normal"/>
@@ -169,25 +196,28 @@
         <DataProperty IRI="#duration"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#bil"/>
+        <NamedIndividual IRI="#Cabin"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Cabin"/>
+        <Class IRI="#Special"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Basketball"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
+        <Class IRI="#Art"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Art"/>
+        <DataProperty IRI="#section"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Festival"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#placeName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#a"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Vip"/>
@@ -215,7 +245,7 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#TicketDiscount"/>
+        <Class IRI="#TicketExtra"/>
         <ObjectUnionOf>
             <Class IRI="#Bundle"/>
             <Class IRI="#Familiar"/>
@@ -231,7 +261,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Bundle"/>
-        <Class IRI="#TicketDiscount"/>
+        <Class IRI="#TicketExtra"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Chair"/>
@@ -279,7 +309,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Familiar"/>
-        <Class IRI="#TicketDiscount"/>
+        <Class IRI="#TicketExtra"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Family"/>
@@ -318,20 +348,58 @@
         <Class IRI="#TicketLocation"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Place"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasRoom"/>
+                <Class IRI="#Room"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasSection"/>
+                <Class IRI="#Section"/>
+            </ObjectSomeValuesFrom>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Room"/>
         <Class IRI="#TicketLocation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Room"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRow"/>
+            <Class IRI="#Row"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Row"/>
         <Class IRI="#TicketLocation"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Row"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasChair"/>
+            <Class IRI="#Chair"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Section"/>
         <Class IRI="#TicketLocation"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Section"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasRow"/>
+            <Class IRI="#Row"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Soccer"/>
         <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Special"/>
+        <Class IRI="#TicketExtra"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sport"/>
@@ -355,10 +423,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vip"/>
-        <ObjectHasValue>
-            <ObjectProperty IRI="#hasSection"/>
-            <NamedIndividual IRI="#Cabin"/>
-        </ObjectHasValue>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hasTicketExtra"/>
+            <Class IRI="#Special"/>
+        </ObjectExactCardinality>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Art"/>
@@ -414,13 +482,89 @@
     <DisjointClasses>
         <Class IRI="#Ticket"/>
         <Class IRI="#TicketCategory"/>
-        <Class IRI="#TicketDiscount"/>
+        <Class IRI="#TicketExtra"/>
         <Class IRI="#TicketLocation"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#Section"/>
         <NamedIndividual IRI="#Cabin"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isTicketCategoryOf"/>
+            <Class IRI="#Vip"/>
+        </ObjectAllValuesFrom>
+        <NamedIndividual IRI="#Cabin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Section"/>
+        <NamedIndividual IRI="#PalcoPimba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Place"/>
+        <NamedIndividual IRI="#Vagos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vip"/>
+        <NamedIndividual IRI="#Vagos1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Row"/>
+        <NamedIndividual IRI="#a"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Festival"/>
+        <NamedIndividual IRI="#vagos_festival"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRow"/>
+        <NamedIndividual IRI="#Cabin"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSection"/>
+        <NamedIndividual IRI="#Vagos"/>
+        <NamedIndividual IRI="#Cabin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSection"/>
+        <NamedIndividual IRI="#Vagos"/>
+        <NamedIndividual IRI="#PalcoPimba"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketCategory"/>
+        <NamedIndividual IRI="#Vagos1"/>
+        <NamedIndividual IRI="#vagos_festival"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketPlace"/>
+        <NamedIndividual IRI="#Vagos1"/>
+        <NamedIndividual IRI="#Vagos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasChair"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#section"/>
+        <NamedIndividual IRI="#Cabin"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Cabin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#placeName"/>
+        <NamedIndividual IRI="#Vagos"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Vagos Festival</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#Vagos1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">40.0</Literal>
+    </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#IsChairOf"/>
         <ObjectProperty IRI="#hasChair"/>
@@ -438,12 +582,16 @@
         <ObjectProperty IRI="#hasSection"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPlace"/>
+        <ObjectProperty IRI="#isPlaceOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasTicketDiscount"/>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
+        <ObjectProperty IRI="#hasTicketExtra"/>
+        <ObjectProperty IRI="#isTicketExtraOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasTicketLocation"/>
@@ -462,20 +610,47 @@
         <ObjectProperty IRI="#IsSectionOf"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTicketCategory"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTicketExtra"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTicketLocation"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTicketPlace"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasTicketSection"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isPlaceOf"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasChair"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasPlace"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasRoom"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasRow"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#hasSection"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
-    </FunctionalObjectProperty>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isTicketCategoryOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isTicketExtraOf"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#isTicketLocationOf"/>
+    </InverseFunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#IsChairOf"/>
         <Class IRI="#Chair"/>
@@ -501,6 +676,10 @@
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlace"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRoom"/>
         <Class IRI="#Place"/>
     </ObjectPropertyDomain>
@@ -520,7 +699,7 @@
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasTicketDiscount"/>
+        <ObjectProperty IRI="#hasTicketExtra"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -528,12 +707,27 @@
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTicketPlace"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTicketSection"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPlaceOf"/>
+        <ObjectUnionOf>
+            <Class IRI="#Room"/>
+            <Class IRI="#Section"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
         <Class IRI="#TicketCategory"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
-        <Class IRI="#TicketDiscount"/>
+        <ObjectProperty IRI="#isTicketExtraOf"/>
+        <Class IRI="#TicketExtra"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isTicketLocationOf"/>
@@ -570,6 +764,13 @@
         </ObjectUnionOf>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlace"/>
+        <ObjectUnionOf>
+            <Class IRI="#Room"/>
+            <Class IRI="#Section"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRoom"/>
         <Class IRI="#Room"/>
     </ObjectPropertyRange>
@@ -586,19 +787,31 @@
         <Class IRI="#TicketCategory"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasTicketDiscount"/>
-        <Class IRI="#TicketDiscount"/>
+        <ObjectProperty IRI="#hasTicketExtra"/>
+        <Class IRI="#TicketExtra"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicketLocation"/>
         <Class IRI="#TicketLocation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTicketPlace"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTicketSection"/>
+        <Class IRI="#Section"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlaceOf"/>
+        <Class IRI="#Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isTicketDiscountOf"/>
+        <ObjectProperty IRI="#isTicketExtraOf"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
@@ -646,6 +859,10 @@
         <Class IRI="#Ticket"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#section"/>
+        <Class IRI="#Section"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#startTime"/>
         <Class IRI="#Ticket"/>
     </DataPropertyDomain>
@@ -672,6 +889,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#price"/>
         <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#section"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#startTime"/>
