@@ -16,10 +16,10 @@
         <Class IRI="#Magic"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#familiarDiscount"/>
+        <Class IRI="#TicketLocation"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TicketLocation"/>
+        <DataProperty IRI="#familiarDiscount"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketExtra"/>
@@ -58,6 +58,9 @@
         <Class IRI="#Music"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#VagosLounge"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Sport"/>
     </Declaration>
     <Declaration>
@@ -85,19 +88,19 @@
         <ObjectProperty IRI="#isTicketCategoryOf"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Place"/>
+        <ObjectProperty IRI="#hasTicketSection"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasTicketSection"/>
+        <Class IRI="#Place"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#endTime"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Drama"/>
+        <Class IRI="#Cinema_IMAX"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cinema_IMAX"/>
+        <Class IRI="#Drama"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Tennis"/>
@@ -136,13 +139,10 @@
         <Class IRI="#Cinema"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasChair"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Vagos1"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Overall_Pass"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChair"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Ticket"/>
@@ -154,10 +154,10 @@
         <Class IRI="#Row"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Tourism"/>
+        <Class IRI="#Cinema_4D"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Cinema_4D"/>
+        <Class IRI="#Tourism"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Family"/>
@@ -172,7 +172,13 @@
         <ObjectProperty IRI="#isTicketExtraOf"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#VagosBackStage"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Cinema_Normal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PicnicContinent4Pack"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketLocation"/>
@@ -184,10 +190,10 @@
         <Class IRI="#Section"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#startTime"/>
+        <Class IRI="#Chair"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Chair"/>
+        <DataProperty IRI="#startTime"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Normal"/>
@@ -196,10 +202,10 @@
         <DataProperty IRI="#duration"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Cabin"/>
+        <Class IRI="#Special"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Special"/>
+        <NamedIndividual IRI="#Cabin"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Basketball"/>
@@ -209,6 +215,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#section"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BilheteVagos1"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Festival"/>
@@ -245,11 +254,17 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#TicketExtra"/>
-        <ObjectUnionOf>
-            <Class IRI="#Bundle"/>
-            <Class IRI="#Familiar"/>
-        </ObjectUnionOf>
+        <Class IRI="#Ticket"/>
+        <ObjectIntersectionOf>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasTicketCategory"/>
+                <Class IRI="#TicketCategory"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasTicketLocation"/>
+                <Class IRI="#TicketLocation"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Art"/>
@@ -419,14 +434,17 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Vip"/>
-        <Class IRI="#Ticket"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Vip"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasTicketExtra"/>
-            <Class IRI="#Special"/>
-        </ObjectExactCardinality>
+        <ObjectIntersectionOf>
+            <Class IRI="#Ticket"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasTicketExtra"/>
+                <Class IRI="#Special"/>
+            </ObjectAllValuesFrom>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasTicketExtra"/>
+                <Class IRI="#Special"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Art"/>
@@ -444,6 +462,7 @@
     <DisjointClasses>
         <Class IRI="#Bundle"/>
         <Class IRI="#Familiar"/>
+        <Class IRI="#Special"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Chair"/>
@@ -486,6 +505,10 @@
         <Class IRI="#TicketLocation"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Vip"/>
+        <NamedIndividual IRI="#BilheteVagos1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Section"/>
         <NamedIndividual IRI="#Cabin"/>
     </ClassAssertion>
@@ -501,12 +524,20 @@
         <NamedIndividual IRI="#PalcoPimba"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Familiar"/>
+        <NamedIndividual IRI="#PicnicContinent4Pack"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Place"/>
         <NamedIndividual IRI="#Vagos"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Vip"/>
-        <NamedIndividual IRI="#Vagos1"/>
+        <Class IRI="#Special"/>
+        <NamedIndividual IRI="#VagosBackStage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Special"/>
+        <NamedIndividual IRI="#VagosLounge"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Row"/>
@@ -520,6 +551,26 @@
         <Class IRI="#Chair"/>
         <NamedIndividual IRI="#1"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketCategory"/>
+        <NamedIndividual IRI="#BilheteVagos1"/>
+        <NamedIndividual IRI="#vagos_festival"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketExtra"/>
+        <NamedIndividual IRI="#BilheteVagos1"/>
+        <NamedIndividual IRI="#VagosBackStage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketExtra"/>
+        <NamedIndividual IRI="#BilheteVagos1"/>
+        <NamedIndividual IRI="#VagosLounge"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketPlace"/>
+        <NamedIndividual IRI="#BilheteVagos1"/>
+        <NamedIndividual IRI="#Vagos"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasRow"/>
         <NamedIndividual IRI="#Cabin"/>
@@ -536,20 +587,15 @@
         <NamedIndividual IRI="#PalcoPimba"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasTicketCategory"/>
-        <NamedIndividual IRI="#Vagos1"/>
-        <NamedIndividual IRI="#vagos_festival"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasTicketPlace"/>
-        <NamedIndividual IRI="#Vagos1"/>
-        <NamedIndividual IRI="#Vagos"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasChair"/>
         <NamedIndividual IRI="#a"/>
         <NamedIndividual IRI="#1"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#BilheteVagos1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">40.0</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#section"/>
         <NamedIndividual IRI="#Cabin"/>
@@ -559,11 +605,6 @@
         <DataProperty IRI="#placeName"/>
         <NamedIndividual IRI="#Vagos"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Vagos Festival</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#price"/>
-        <NamedIndividual IRI="#Vagos1"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">40.0</Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
         <ObjectProperty IRI="#IsChairOf"/>

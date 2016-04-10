@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1460296621057" name="http://www.semanticweb.org/danie/ontologies/2016/3/untitled-ontology-12" uri="bilhetes.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1460305608036" name="http://www.semanticweb.org/danie/ontologies/2016/3/untitled-ontology-12" uri="bilhetes.owl"/>
     </group>
 </catalog>
