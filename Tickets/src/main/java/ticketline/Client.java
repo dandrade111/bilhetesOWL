@@ -28,8 +28,6 @@ import uk.ac.manchester.cs.jfact.JFactFactory;
 
 public class Client extends Agent 
 {
-    private boolean finished = false;
-
     @Override
     protected void takeDown()
     {
@@ -58,32 +56,14 @@ public class Client extends Agent
 
         System.out.println(this.getLocalName()+" starting!");
         
-        /*
-        this.addBehaviour(new OneShotBehaviour() {
-
-            @Override
-            public void action() {
-                ACLMessage msg = new ACLMessage();
-                msg.setPerformative(ACLMessage.REQUEST);
-                AID receiver = new AID();
-                receiver.setLocalName("salesman");
-                msg.addReceiver(receiver);
-                   
-                String msgContent = "buyTicket";
-                msg.setContent(msgContent);
-
-                myAgent.send(msg);
-            }
-        });*/
-        
         this.addBehaviour(new CyclicBehaviour() {
-
             @Override
             public void action() {
                 ACLMessage req = receive();
                 if (req != null) {   
                     ACLMessage msg = new ACLMessage();
                     msg.setPerformative(ACLMessage.REQUEST);
+                    
                     AID receiver = new AID();
                     receiver.setLocalName("salesman");
                     msg.addReceiver(receiver);
@@ -95,13 +75,5 @@ public class Client extends Agent
                 }
             }
         });
-    }
-
-    public boolean isFinished() {
-            return finished;
-    }
-
-    public void setFinished(boolean finished) {
-            this.finished = finished;
     }
 }

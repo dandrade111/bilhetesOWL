@@ -27,6 +27,8 @@ import uk.ac.manchester.cs.jfact.JFactFactory;
 public class Salesman extends Agent 
 {
     private boolean finished = false;
+    
+    // Estruturas para guardar bilhetes disponiveis, vendidos?
 
     @Override
     protected void takeDown()
