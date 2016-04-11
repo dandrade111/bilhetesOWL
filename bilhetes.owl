@@ -285,6 +285,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Normal"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Ticket"/>
+            <ObjectExactCardinality cardinality="0">
+                <ObjectProperty IRI="#hasTicketExtra"/>
+                <Class IRI="#TicketExtra"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Overall_Pass"/>
         <ObjectIntersectionOf>
             <Class IRI="#Ticket"/>
@@ -808,6 +818,18 @@
         <ObjectProperty IRI="#isTicketLocationOf"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsChairOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsRoomOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsRowOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#IsSectionOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#hasTicketExtra"/>
     </FunctionalObjectProperty>
     <ObjectPropertyDomain>
@@ -840,7 +862,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPlace"/>
-        <Class IRI="#Place"/>
+        <Class IRI="#TicketLocation"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasRoom"/>
@@ -879,10 +901,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPlaceOf"/>
-        <ObjectUnionOf>
-            <Class IRI="#Room"/>
-            <Class IRI="#Section"/>
-        </ObjectUnionOf>
+        <Class IRI="#Place"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
@@ -932,10 +951,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPlace"/>
-        <ObjectUnionOf>
-            <Class IRI="#Room"/>
-            <Class IRI="#Section"/>
-        </ObjectUnionOf>
+        <Class IRI="#Place"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasRoom"/>
@@ -971,7 +987,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPlaceOf"/>
-        <Class IRI="#Place"/>
+        <Class IRI="#TicketLocation"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isTicketCategoryOf"/>
@@ -1082,6 +1098,31 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IsChairOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a chair and its Row. Is the Inverse of the HasChair Property. Since a chair is only allowed to be related to a single Row it is a Functional Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IsRoomOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Room and its Place. Is the Inverse of the hasRoom Property. Since a Room is only allowed to be related to a single Place it is a Functional Property. It is also disjoint with IsSectionOf and HasSection Properties since a Place either has Rooms or Sections.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IsRowOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Row and its Room or Section. Is the Inverse of the HasRow Property. Since a Row is only allowed to be related to a single Room or Section it is a Functional Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IsSectionOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Section and its Place. Is the Inverse of the hasSection Property. Since a Section is only allowed to be related to a single Place it is a Functional Property. It is also disjoint with IsRoomOf and HasRoom Properties since a Place either has Rooms or Sections.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Normal</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines all the tickets that don’t have an associated Extra.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Overall_Pass</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">This kind of ticket is only availlable for the various Sports on the Sport Category or the Festival Category, and it also requires that there is an hasMultippleDays property in place.</Literal>
     </AnnotationAssertion>
@@ -1123,6 +1164,86 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Vip</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">This ticket requires that there is a Special extra related to it, usally is a special place or for example acess to a reservated area, as the BackStage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasChair</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Row and the Chairs it has. Is the Inverse of the IsChairOf Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasChildrenDiscount</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Ticket and the UnderAged Extra.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMultipleDays</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This relation defines that a Festival or a sub Category of a Sport is an event with MultipleDays, allowing the OverallPass Ticket.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPlace</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a TicketLocation and the Place it has. Is the Inverse of the IsPlaceOf Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRoom</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Place and the Room it has. Is the Inverse of the IsRoomOf Property. It is also Disjoint with the IsSectionOf and hasSection Properties because a place either has rooms or sections</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRow</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Room or a Section and the Rows they have. Is the Inverse of the IsRowOf Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSection</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Place and the Section it has. Is the Inverse of the IsSectionOf Property. It is also Disjoint with the IsRoomOf and hasRoom Properties because a place either has rooms or sections</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketCategory</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Ticket Category. Is the inverse property of the IsTicketCategoryOf.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketExtra</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a TicketExtra. Is the inverse property of the IsTicketExtraOf. This Property is Function since only One Extra is allowed per ticket.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketLocation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a TicketLocation. Is the inverse property of the IsTicketLocationOf.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketPlace</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Place of the Ticket Category.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketSection</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Section of a Place in the Ticket Category.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPlaceOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Establishes a relation between a Place and the TicketLocation it has. Is the Inverse of the hasPlace Property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isTicketCategoryOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a TicketCategory and his Tickets. Is the inverse property of the hasTicketCategory.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isTicketExtraOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a TicketExtra and his Tickets. Is the inverse property of the hasTicketExtra.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isTicketLocationOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a TicketLocation and his Tickets. Is the inverse property of the hasTicketLocation.</Literal>
     </AnnotationAssertion>
 </Ontology>
 
