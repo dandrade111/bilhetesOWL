@@ -1060,6 +1060,31 @@
         <DataProperty IRI="#startTime"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Children</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Type Children for a ticket, only if it has the TicketExtra UnderAged</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Overall_Pass</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This kind of ticket is only availlable for the various Sports on the Sport Category or the Festival Category, and it also requires that there is an hasMultippleDays property in place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Ticket</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The main class of our project, the subclasses will define all the tickets sold in the Store.It assures the existence of exactly 1 TicketCategory and TicketLocation so as the Closure Axiome for the Property hasTicketExtra confining its range to UnderAged, Bundle, Familiar or Special if it exists.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TicketCategory</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A characterisation of all the events to which our store sells tickets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Vip</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This ticket requires that there is a Special extra related to it, usally is a special place or for example acess to a reservated area, as the BackStage.</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
