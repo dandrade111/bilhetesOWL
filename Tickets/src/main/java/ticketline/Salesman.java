@@ -9,6 +9,7 @@ import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
 import java.io.IOException;
+import java.util.ArrayList;
 import ontologyquery.DLQueryEngine;
 import ontologyquery.DLQueryPrinter;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -27,6 +28,7 @@ import uk.ac.manchester.cs.jfact.JFactFactory;
 public class Salesman extends Agent 
 {
     private boolean finished = false;
+    public ArrayList<String> soldTickets;
     
     // Estruturas para guardar bilhetes disponiveis, vendidos?
 
@@ -57,7 +59,7 @@ public class Salesman extends Agent
         catch (FIPAException fe) { fe.printStackTrace(); }
 
         System.out.println(this.getLocalName()+" starting!");
-
+        soldTickets = new ArrayList<String>();
         this.addBehaviour(new ReceiveBehaviour());
     }
 
@@ -141,13 +143,21 @@ public class Salesman extends Agent
                     }
                     if(msg.getContent().contains("buy")){
                         String received =  msg.getContent().replace("buy", "");
+                   
                         if(received.equals("No tickets found!")){
                             System.out.println("["+ myAgent.getLocalName() + "] "+received);
                         }
                         else {
-                            System.out.println("["+ myAgent.getLocalName() + "] Ticket " + msg.getContent().replace("buy", "") + " bought.");
+                            if(!soldTickets.contains(received)){
+                                soldTickets.add(received);
+                                System.out.println("["+ myAgent.getLocalName() + "] Ticket " + received + " bought.");
+                                reply.setContent("OK");
+                            }
+                            else {
+                                System.out.println("["+ myAgent.getLocalName() + "] Ticket " + received + " already bought.");
+                                reply.setContent("SOLD");
+                            }
                         }
-                        reply.setContent("OK");
                         myAgent.send(reply);
                     }
                 }

@@ -140,6 +140,10 @@ public class Client extends Agent
                         i.getjTextField2().setBackground(Color.green);
                         i.getjTextField2().setText("Ticket bought!");
                     }
+                    else if(req.getContent().contains("SOLD")){
+                        i.getjTextField2().setBackground(Color.red);
+                        i.getjTextField2().setText("Ticket already bought!");
+                    }
                     else {
                         ACLMessage msg = new ACLMessage();
                         msg.setPerformative(ACLMessage.REQUEST);
