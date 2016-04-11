@@ -61,17 +61,41 @@ public class Client extends Agent
             public void action() {
                 ACLMessage req = receive();
                 if (req != null) {   
-                    ACLMessage msg = new ACLMessage();
-                    msg.setPerformative(ACLMessage.REQUEST);
-                    
-                    AID receiver = new AID();
-                    receiver.setLocalName("salesman");
-                    msg.addReceiver(receiver);
+                    if(req.getContent().contains("QUERY")){
+                        ACLMessage msg = new ACLMessage();
+                        msg.setPerformative(ACLMessage.REQUEST);
 
-                    String msgContent = "buy"+req.getContent();
-                    msg.setContent(msgContent);
+                        AID receiver = new AID();
+                        receiver.setLocalName("salesman");
+                        msg.addReceiver(receiver);
+                        
+                        //System.out.println(req.getContent());
+                        String [] split = req.getContent().split("\\|");
+                        String msgContent = "";
+                        if(split[4].contains("[NONE]")){
+                            msgContent = "buyNo tickets found!";
+                        }
+                        else {
+                            String [] p = split[4].split(",");
+                            msgContent = "buy"+p[1];
+                        }
+                        msg.setContent(msgContent);
+                        myAgent.send(msg);
+                    }
+                    else {
+                        ACLMessage msg = new ACLMessage();
+                        msg.setPerformative(ACLMessage.REQUEST);
 
-                    myAgent.send(msg);
+                        AID receiver = new AID();
+                        receiver.setLocalName("salesman");
+                        msg.addReceiver(receiver);
+
+                        String msgContent = "check"+req.getContent();
+                        msg.setContent(msgContent);
+                        
+                        System.out.println("["+ myAgent.getLocalName() + "] Query: " + msgContent);
+                        myAgent.send(msg);
+                    }
                 }
             }
         });

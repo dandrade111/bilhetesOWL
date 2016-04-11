@@ -94,25 +94,25 @@ public class Salesman extends Agent
                 {
                     if (msg.getContent().equals("shutdown"))
                     {
-                        System.out.println("Agent "+myAgent.getLocalName()+" exiting...");
+                        System.out.println("["+ myAgent.getLocalName() + "] Agent "+myAgent.getLocalName()+" exiting...");
                         setFinished(true);
                         reply.setPerformative(ACLMessage.CONFIRM);
                         myAgent.send(reply);
                     }
                     
-                    if(msg.getContent().contains("buy")){
+                    if(msg.getContent().contains("check")){
                         try {
                             // Load ontology
                             OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
                             OWLOntology ontology= Ticketline.load(manager);
-                            System.out.println("Loaded ontology: " + ontology.getOntologyID().getOntologyIRI().get());
+                            System.out.println("["+ myAgent.getLocalName() + "] Loaded ontology: " + ontology.getOntologyID().getOntologyIRI().get());
                             
                             //OWLReasoner reasoner = createReasoner(ontology);
-
+                            
                             OWLReasonerConfiguration config = new SimpleConfiguration(50000);
                             OWLReasonerFactory reasonerFactory= new JFactFactory();
                             OWLReasoner reasoner = reasonerFactory.createReasoner(ontology, config);
-
+                            
                            //System.out.println(reasoner.getReasonerName());
                             // Entities are named using IRIs. These are usually too long for use
                             // in user interfaces. To solve this
@@ -129,17 +129,30 @@ public class Salesman extends Agent
                                     shortFormProvider);
                             
                             // Execute the query received
-                            dlQueryPrinter.askQuery(msg.getContent().replace("buy", ""));
+                            String result = dlQueryPrinter.askQuery(msg.getContent().replace("check", ""));
+                            System.out.println("["+ myAgent.getLocalName() + "] "+result);
+                            
+                            reply.setContent(result);
+                            myAgent.send(reply);
                             
                         } catch (OWLOntologyCreationException e) {
-                            System.out.println("Could not load ontology: " + e.getMessage());
+                            System.out.println("["+ myAgent.getLocalName() + "] Could not load ontology: " + e.getMessage());
+                        }
+                    }
+                    if(msg.getContent().contains("buy")){
+                        String received =  msg.getContent().replace("buy", "");
+                        if(received.equals("No tickets found!")){
+                            System.out.println("["+ myAgent.getLocalName() + "] "+received);
+                        }
+                        else {
+                            System.out.println("["+ myAgent.getLocalName() + "] Ticket " + msg.getContent().replace("buy", "") + " bought.");
                         }
                     }
                 }
                 else
                 {
                     reply.setPerformative(ACLMessage.NOT_UNDERSTOOD);
-                    reply.setContent("Unrecognized request performative. Must be ACLMessage.REQUEST!");
+                    reply.setContent("["+ myAgent.getLocalName() + "] Unrecognized request performative. Must be ACLMessage.REQUEST!");
                     myAgent.send(reply);
                 }
             }

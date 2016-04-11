@@ -24,7 +24,7 @@ public class DLQueryPrinter {
         this.shortFormProvider = shortFormProvider;
         dlQueryEngine = engine;
     }
-    
+    /*
     private void printEntities(String name, Set<? extends OWLEntity> entities,
             StringBuilder sb) {
         sb.append(name);
@@ -43,12 +43,62 @@ public class DLQueryPrinter {
             sb.append("\t[NONE]\n");
         }
         sb.append("\n");
+    }*/
+    
+    private void printEntities(String name, Set<? extends OWLEntity> entities,
+            StringBuilder sb) {
+        sb.append(name);
+        
+        if (!entities.isEmpty()) {
+            for (OWLEntity entity : entities) {
+                sb.append(shortFormProvider.getShortForm(entity));
+                sb.append(",");
+            }
+        } else {
+            sb.append("[NONE]");
+        }
+        sb.append("|");
     }
 
     /**
      * @param classExpression
      *        the class expression to use for interrogation
      */
+    public String askQuery(String classExpression) {
+        if (classExpression.length() == 0) {
+            System.out.println("No class expression specified");
+            return "Error";
+        } else {
+            try {
+                StringBuilder sb = new StringBuilder();
+                sb.append("QUERY: ");
+                sb.append(classExpression);
+                sb.append("|");
+                // Ask for the subclasses, superclasses etc. of the specified
+                // class expression. Print out the results.
+                Set<OWLClass> superClasses = dlQueryEngine.getSuperClasses(
+                        classExpression, true);
+                printEntities("SuperClasses,", superClasses, sb);
+                Set<OWLClass> equivalentClasses = dlQueryEngine
+                        .getEquivalentClasses(classExpression);
+                printEntities("EquivalentClasses,", equivalentClasses, sb);
+                Set<OWLClass> subClasses = dlQueryEngine.getSubClasses(
+                        classExpression, true);
+                printEntities("SubClasses,", subClasses, sb);
+                Set<OWLNamedIndividual> individuals = dlQueryEngine
+                        .getInstances(classExpression, true);
+                printEntities("Instances,", individuals, sb);
+                //System.out.println(sb.toString());
+                
+                return sb.toString();
+            } catch (ParserException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return "Error";
+    }
+    
+    /* Old AskQuery
     public void askQuery(String classExpression) {
         if (classExpression.length() == 0) {
             System.out.println("No class expression specified");
@@ -80,6 +130,6 @@ public class DLQueryPrinter {
             }
         }
     }
-
+    */
   
 }
