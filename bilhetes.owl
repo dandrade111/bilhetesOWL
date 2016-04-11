@@ -269,10 +269,10 @@
         <NamedIndividual IRI="#a"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#vagos_festival"/>
+        <NamedIndividual IRI="#um"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#1"/>
+        <NamedIndividual IRI="#vagos_festival"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#Children"/>
@@ -650,12 +650,12 @@
         <NamedIndividual IRI="#a"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Festival"/>
-        <NamedIndividual IRI="#vagos_festival"/>
+        <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#um"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Chair"/>
-        <NamedIndividual IRI="#1"/>
+        <Class IRI="#Festival"/>
+        <NamedIndividual IRI="#vagos_festival"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTicketCategory"/>
@@ -735,7 +735,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasChair"/>
         <NamedIndividual IRI="#a"/>
-        <NamedIndividual IRI="#1"/>
+        <NamedIndividual IRI="#um"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsChairOf"/>
+        <NamedIndividual IRI="#um"/>
+        <NamedIndividual IRI="#a"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#price"/>
@@ -1062,13 +1067,28 @@
     </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Bundle</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Identifies a Ticket that gives access to multiple people, usually they have a lower price in total as compared to buying multiple tickets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Children</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Type Children for a ticket, only if it has the TicketExtra UnderAged</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Familiar</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Associated to tickets that allow access to a family, requires 2 Adults and at lest 1 Children Ticket. Providing a global ticket at a lower price.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#Overall_Pass</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">This kind of ticket is only availlable for the various Sports on the Sport Category or the Festival Category, and it also requires that there is an hasMultippleDays property in place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Special</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">This Extra give access to special Zone of the event.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -1079,6 +1099,25 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#TicketCategory</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">A characterisation of all the events to which our store sells tickets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TicketExtra</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Our ticket has the option to have Extras associated to them, The TicketExtra is a closed world.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TicketLocation</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The ticketLocation Specifies the Ticket Place, Section or Room, Row and Chair if there is any. But is also gives a Hierarchy notion to a Event Location using the Properties hasPlace, hasSection,...
+------------ Place -------------------
+ &apos;-&gt;Room                    |  &apos;-&gt;Section
+          &apos;-&gt;Row                           &apos;-&gt;Row   
+                  &apos;-&gt;Chair                          &apos;-&gt;Chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnderAged</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Identifies a Ticket that has UnderAged people as tharget, usually they have a lower price.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
