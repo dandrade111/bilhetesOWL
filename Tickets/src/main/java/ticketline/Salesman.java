@@ -27,6 +27,8 @@ import uk.ac.manchester.cs.jfact.JFactFactory;
 public class Salesman extends Agent 
 {
     private boolean finished = false;
+    
+    // Estruturas para guardar bilhetes disponiveis, vendidos?
 
     @Override
     protected void takeDown()
@@ -127,7 +129,7 @@ public class Salesman extends Agent
                                     shortFormProvider);
                             
                             // Execute the query received
-                            dlQueryPrinter.askQuery(msg.getContent());
+                            dlQueryPrinter.askQuery(msg.getContent().replace("buy", ""));
                             
                         } catch (OWLOntologyCreationException e) {
                             System.out.println("Could not load ontology: " + e.getMessage());
