@@ -176,6 +176,9 @@
         <ObjectProperty IRI="#hasTicketCategory"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTicketChair"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasTicketExtra"/>
     </Declaration>
     <Declaration>
@@ -183,6 +186,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketPlace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTicketRoom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTicketRow"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasTicketSection"/>
@@ -206,7 +215,7 @@
         <DataProperty IRI="#endTime"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#familiarDiscount"/>
+        <DataProperty IRI="#familiarDiscountAmount"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#isAvailable"/>
@@ -263,7 +272,16 @@
         <NamedIndividual IRI="#RioAve_X_VGuimaraes"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#SecaoDaNoite4D"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#SeccaoDaNoite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SeccaoDaNoite3D"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SeccaoDaNoiteImax"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Vagos"/>
@@ -661,8 +679,20 @@
         <NamedIndividual IRI="#RioAve_X_VGuimaraes"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Cinema_3D"/>
+        <Class IRI="#Cinema_4D"/>
+        <NamedIndividual IRI="#SecaoDaNoite4D"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cinema_Normal"/>
         <NamedIndividual IRI="#SeccaoDaNoite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cinema_3D"/>
+        <NamedIndividual IRI="#SeccaoDaNoite3D"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cinema_IMAX"/>
+        <NamedIndividual IRI="#SeccaoDaNoiteImax"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Place"/>
@@ -783,6 +813,16 @@
         <NamedIndividual IRI="#um"/>
         <NamedIndividual IRI="#a"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
+        <Literal datatypeIRI="&xsd;double">5.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
+        <Literal datatypeIRI="&xsd;string">123 min</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#price"/>
         <NamedIndividual IRI="#BilheteVagos1"/>
@@ -915,6 +955,10 @@
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTicketChair"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTicketExtra"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
@@ -924,6 +968,14 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasTicketPlace"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTicketRoom"/>
+        <Class IRI="#Ticket"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTicketRow"/>
         <Class IRI="#Ticket"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1001,6 +1053,10 @@
         <Class IRI="#TicketCategory"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTicketChair"/>
+        <Class IRI="#Chair"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicketExtra"/>
         <Class IRI="#TicketExtra"/>
     </ObjectPropertyRange>
@@ -1011,6 +1067,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicketPlace"/>
         <Class IRI="#Place"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTicketRoom"/>
+        <Class IRI="#Room"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTicketRow"/>
+        <Class IRI="#Row"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasTicketSection"/>
@@ -1057,7 +1121,7 @@
         <Class IRI="#Ticket"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#familiarDiscount"/>
+        <DataProperty IRI="#familiarDiscountAmount"/>
         <Class IRI="#Familiar"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -1089,7 +1153,7 @@
         <Datatype abbreviatedIRI="xsd:dateTime"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#familiarDiscount"/>
+        <DataProperty IRI="#familiarDiscountAmount"/>
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
@@ -1238,6 +1302,11 @@
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketChair</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Chair of the Ticket Category.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasTicketExtra</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a TicketExtra. Is the inverse property of the IsTicketExtraOf. This Property is Function since only One Extra is allowed per ticket.</Literal>
     </AnnotationAssertion>
@@ -1250,6 +1319,16 @@
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#hasTicketPlace</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Place of the Ticket Category.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketRoom</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Room of the Ticket Category.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTicketRow</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Defines the Relation between a Ticket and a Row of the Ticket Category.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
