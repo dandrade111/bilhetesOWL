@@ -233,7 +233,16 @@
         <DataProperty IRI="#startTime"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#ArcosMenor16"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ArcosNorte"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#BilheteVagos1"/>
@@ -249,6 +258,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#CinemaLusomundoBragaParque"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EstadioDosArcos"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#EventoPicNicContinente"/>
@@ -270,6 +282,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#RioAve_X_VGuimaraes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sala2"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SecaoDaNoite4D"/>
@@ -296,10 +311,25 @@
         <NamedIndividual IRI="#a"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#dois"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#j"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#quatro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tres"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#um"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#vagos_festival"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#24j24"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#Children"/>
@@ -620,8 +650,20 @@
         <Class IRI="#TicketLocation"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#UnderAged"/>
+        <NamedIndividual IRI="#ArcosMenor16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Section"/>
+        <NamedIndividual IRI="#ArcosNorte"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Ticket"/>
         <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Ticket"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Ticket"/>
@@ -651,6 +693,10 @@
         <NamedIndividual IRI="#CinemaLusomundoBragaParque"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Place"/>
+        <NamedIndividual IRI="#EstadioDosArcos"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Family"/>
         <NamedIndividual IRI="#EventoPicNicContinente"/>
     </ClassAssertion>
@@ -677,6 +723,10 @@
     <ClassAssertion>
         <Class IRI="#Soccer"/>
         <NamedIndividual IRI="#RioAve_X_VGuimaraes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Room"/>
+        <NamedIndividual IRI="#Sala2"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cinema_4D"/>
@@ -712,21 +762,86 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#dois"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Row"/>
+        <NamedIndividual IRI="#j"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#quatro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#tres"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chair"/>
         <NamedIndividual IRI="#um"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Festival"/>
         <NamedIndividual IRI="#vagos_festival"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chair"/>
+        <NamedIndividual IRI="#24j24"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsSectionOf"/>
+        <NamedIndividual IRI="#ArcosNorte"/>
+        <NamedIndividual IRI="#EstadioDosArcos"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
         <NamedIndividual IRI="#SeccaoDaNoite"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketChair"/>
+        <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
+        <NamedIndividual IRI="#um"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTicketLocation"/>
         <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
         <NamedIndividual IRI="#CinemaLusomundoBragaParque"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketRow"/>
+        <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketCategory"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <NamedIndividual IRI="#RioAve_X_VGuimaraes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketChair"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <NamedIndividual IRI="#24j24"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketExtra"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <NamedIndividual IRI="#ArcosMenor16"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketPlace"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <NamedIndividual IRI="#EstadioDosArcos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketRow"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <NamedIndividual IRI="#j"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasTicketSection"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <NamedIndividual IRI="#ArcosNorte"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTicketCategory"/>
@@ -774,11 +889,6 @@
         <NamedIndividual IRI="#Vagos"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasRow"/>
-        <NamedIndividual IRI="#Cabin"/>
-        <NamedIndividual IRI="#a"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasTicketCategory"/>
         <NamedIndividual IRI="#PicNicContinente"/>
         <NamedIndividual IRI="#EventoPicNicContinente"/>
@@ -792,6 +902,16 @@
         <ObjectProperty IRI="#hasTicketLocation"/>
         <NamedIndividual IRI="#PicNicContinente"/>
         <NamedIndividual IRI="#Lisboa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsRoomOf"/>
+        <NamedIndividual IRI="#Sala2"/>
+        <NamedIndividual IRI="#CinemaLusomundoBragaParque"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasRow"/>
+        <NamedIndividual IRI="#Sala2"/>
+        <NamedIndividual IRI="#a"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasSection"/>
@@ -810,8 +930,33 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#IsChairOf"/>
+        <NamedIndividual IRI="#dois"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsRowOf"/>
+        <NamedIndividual IRI="#j"/>
+        <NamedIndividual IRI="#ArcosNorte"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsChairOf"/>
+        <NamedIndividual IRI="#quatro"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsChairOf"/>
+        <NamedIndividual IRI="#tres"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsChairOf"/>
         <NamedIndividual IRI="#um"/>
         <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#IsChairOf"/>
+        <NamedIndividual IRI="#24j24"/>
+        <NamedIndividual IRI="#j"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#price"/>
@@ -822,6 +967,11 @@
         <DataProperty IRI="#price"/>
         <NamedIndividual IRI="#BatManVsSuperHomem-ODespertarDaJustica"/>
         <Literal datatypeIRI="&xsd;string">123 min</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#price"/>
+        <NamedIndividual IRI="#BilheteRioAveVGuimaraes"/>
+        <Literal datatypeIRI="&xsd;double">15.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#price"/>
