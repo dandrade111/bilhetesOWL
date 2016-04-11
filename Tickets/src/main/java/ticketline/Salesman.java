@@ -147,6 +147,8 @@ public class Salesman extends Agent
                         else {
                             System.out.println("["+ myAgent.getLocalName() + "] Ticket " + msg.getContent().replace("buy", "") + " bought.");
                         }
+                        reply.setContent("OK");
+                        myAgent.send(reply);
                     }
                 }
                 else

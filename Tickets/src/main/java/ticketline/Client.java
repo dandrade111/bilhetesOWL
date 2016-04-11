@@ -10,7 +10,11 @@ import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
+import javax.swing.DefaultListModel;
 import ontologyquery.DLQueryEngine;
 import ontologyquery.DLQueryPrinter;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -28,6 +32,7 @@ import uk.ac.manchester.cs.jfact.JFactFactory;
 
 public class Client extends Agent 
 {
+    public String query = "";
     @Override
     protected void takeDown()
     {
@@ -55,6 +60,43 @@ public class Client extends Agent
         catch (FIPAException fe) { fe.printStackTrace(); }
 
         System.out.println(this.getLocalName()+" starting!");
+        final ClientGUI i = new ClientGUI();
+        i.setVisible(true);
+        i.getjButton2().addActionListener(new ActionListener(){
+              public void actionPerformed(ActionEvent e)
+              {
+                query = i.getjTextField1().getText();
+                ACLMessage msg = new ACLMessage();
+                msg.setPerformative(ACLMessage.REQUEST);
+
+                AID receiver = new AID();
+                receiver.setLocalName("salesman");
+                msg.addReceiver(receiver);
+
+                String msgContent = "check"+query;
+                msg.setContent(msgContent);
+
+                System.out.println("["+ getLocalName() + "] Query: " + msgContent);
+                send(msg);
+              }
+            });
+        
+        i.getjButton1().addActionListener(new ActionListener(){
+              public void actionPerformed(ActionEvent e)
+              {
+                query = i.getjTextField1().getText();
+                ACLMessage msg = new ACLMessage();
+                msg.setPerformative(ACLMessage.REQUEST);
+
+                AID receiver = new AID();
+                receiver.setLocalName("salesman");
+                msg.addReceiver(receiver);
+
+                String msgContent = "buy" + i.getjList1().getSelectedValue().toString();
+                msg.setContent(msgContent);
+                send(msg);
+              }
+            });
         
         this.addBehaviour(new CyclicBehaviour() {
             @Override
@@ -74,13 +116,29 @@ public class Client extends Agent
                         String msgContent = "";
                         if(split[4].contains("[NONE]")){
                             msgContent = "buyNo tickets found!";
+                            i.getjTextField2().setBackground(Color.red);
+                            i.getjTextField2().setText("No tickets available!");
+                            i.getjList1().setModel(new DefaultListModel());
                         }
                         else {
+                            i.getjTextField2().setBackground(Color.yellow);
+                            i.getjTextField2().setText("Tickets available!");
+                            DefaultListModel listModel = new DefaultListModel();
                             String [] p = split[4].split(",");
-                            msgContent = "buy"+p[1];
+                            String f = "";
+                            for(int i = 1; i < p.length; i++)
+                                listModel.addElement(p[i]);
+                            
+                            i.getjList1().setModel(listModel);
+                            
+                            //msgContent = "buy"+p[1];
                         }
-                        msg.setContent(msgContent);
-                        myAgent.send(msg);
+                        //msg.setContent(msgContent);
+                        //myAgent.send(msg);
+                    }
+                    else if(req.getContent().contains("OK")){
+                        i.getjTextField2().setBackground(Color.green);
+                        i.getjTextField2().setText("Ticket bought!");
                     }
                     else {
                         ACLMessage msg = new ACLMessage();
