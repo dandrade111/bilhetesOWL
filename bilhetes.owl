@@ -209,6 +209,12 @@
         <ObjectProperty IRI="#isTicketLocationOf"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#DoorNumber"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#StreetAdress"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#duration"/>
     </Declaration>
     <Declaration>
@@ -227,7 +233,7 @@
         <DataProperty IRI="#price"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#section"/>
+        <DataProperty IRI="#sectionSponsor"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#startTime"/>
@@ -1055,7 +1061,7 @@
         <Literal datatypeIRI="&xsd;double">35.0</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#section"/>
+        <DataProperty IRI="#sectionSponsor"/>
         <NamedIndividual IRI="#Cabin"/>
         <Literal datatypeIRI="&xsd;string">Cabin</Literal>
     </DataPropertyAssertion>
@@ -1334,6 +1340,14 @@
         <ObjectProperty IRI="#hasSection"/>
     </DisjointObjectProperties>
     <DataPropertyDomain>
+        <DataProperty IRI="#DoorNumber"/>
+        <Class IRI="#Place"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#StreetAdress"/>
+        <Class IRI="#Place"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#duration"/>
         <Class IRI="#Ticket"/>
     </DataPropertyDomain>
@@ -1358,13 +1372,21 @@
         <Class IRI="#Ticket"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#section"/>
+        <DataProperty IRI="#sectionSponsor"/>
         <Class IRI="#Section"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#startTime"/>
         <Class IRI="#Ticket"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#DoorNumber"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#StreetAdress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#duration"/>
         <Datatype abbreviatedIRI="xsd:string"/>
@@ -1390,7 +1412,7 @@
         <Datatype abbreviatedIRI="xsd:double"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#section"/>
+        <DataProperty IRI="#sectionSponsor"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
